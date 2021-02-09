@@ -11,10 +11,15 @@
 }
 nav {
   background: red;
+  display: flex;
+  justify-content: space-around;
 }
 .article {
   border: solid green;
 }
 .header {
   background: orange;
+}
+.comments {
+  border: solid black;
 }

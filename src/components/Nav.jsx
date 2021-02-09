@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import { Link } from '@reach/router';
-import Articles from './ArticleList';
 
 export default class Nav extends Component {
   state = {
@@ -10,14 +9,17 @@ export default class Nav extends Component {
   componentDidMount() {
     this.fetchTopics();
   }
+
   render() {
     const { topics } = this.state;
     return (
       <nav className="nav">
+        <Link to={`/`} key={'all'}>
+          {'All Topics'}
+        </Link>
         {topics.map((topic) => {
-          console.log(topic);
           return (
-            <Link to={`/${topic.slug}`} key={topic.slug}>
+            <Link to={`/topic/${topic.slug}`} key={topic.slug}>
               {topic.slug}
             </Link>
           );
@@ -26,7 +28,7 @@ export default class Nav extends Component {
     );
   }
 
-  fetchTopics() {
+  fetchTopics(topic) {
     api.getTopics().then((topics) => {
       this.setState({ topics });
     });

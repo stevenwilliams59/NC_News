@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import Article from './Article';
+import ErrorHandler from './ErrorHandler';
 
 export default class ArticleList extends Component {
   state = {
     articles: [],
-    isLoading: true
+    isLoading: true,
+    errMessage: ''
   };
 
   componentDidMount() {
@@ -20,7 +22,10 @@ export default class ArticleList extends Component {
   }
 
   render() {
-    const { articles } = this.state;
+    const { articles, errMessage } = this.state;
+    if (errMessage) return <ErrorHandler msg={errMessage} />;
+    if (articles.length === 0)
+      return <h2>No articles here. Be the first to post!!</h2>;
     return (
       <main className="list">
         {articles.map((article) => {
@@ -30,8 +35,13 @@ export default class ArticleList extends Component {
     );
   }
   fetchArticles(topic) {
-    api.getArticles(topic).then((articles) => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .getArticles(topic)
+      .then((articles) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch((err) => {
+        this.setState({ errMessage: err.response.data.msg, isLoading: false });
+      });
   }
 }

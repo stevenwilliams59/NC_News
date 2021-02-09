@@ -11,9 +11,29 @@ export const getTopics = () => {
 export const getArticles = (topic) => {
   return axios
     .get('https://northcoders--news--project.herokuapp.com/api/articles', {
-      params: { slug: topic }
+      params: { topic: topic }
     })
     .then(({ data }) => {
       return data.articles;
+    });
+};
+
+export const getArticleById = (article) => {
+  return axios
+    .get(
+      `https://northcoders--news--project.herokuapp.com/api/articles/${article}`
+    )
+    .then(({ data }) => {
+      return data;
+    });
+};
+
+export const getCommentsByArticleById = (id) => {
+  return axios
+    .get(
+      `https://northcoders--news--project.herokuapp.com/api/articles/${id}/comments`
+    )
+    .then(({ data }) => {
+      return data;
     });
 };
