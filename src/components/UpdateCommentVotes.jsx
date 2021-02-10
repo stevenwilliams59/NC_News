@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 
-export default class UpdateVotes extends Component {
+export default class UpdateCommentVotes extends Component {
   state = {
     voteChange: 0
   };
@@ -36,6 +36,6 @@ export default class UpdateVotes extends Component {
     this.setState((currentState) => {
       return { voteChange: currentState.voteChange + voteDiff };
     });
-    api.updateVotes(id, voteDiff);
+    api.updateCommentVotes(id, voteDiff);
   };
 }

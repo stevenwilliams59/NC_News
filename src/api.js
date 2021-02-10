@@ -46,3 +46,19 @@ export const updateVotes = (id, voteDiff) => {
     }
   );
 };
+
+export const updateCommentVotes = (id, voteDiff) => {
+  return axios.patch(
+    `https://northcoders--news--project.herokuapp.com/api/comments/${id}`,
+    {
+      inc_votes: voteDiff
+    }
+  );
+};
+
+export const addComment = (id, postData) => {
+  return axios.post(
+    `https://northcoders--news--project.herokuapp.com/api/articles/${id}/comments`,
+    postData
+  );
+};

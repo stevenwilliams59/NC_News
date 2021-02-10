@@ -17,9 +17,10 @@ class EachArticle extends Component {
   }
   render() {
     const { article } = this.state;
+
     if (!article) return <p>fetching article!</p>;
     return (
-      <main className="article">
+      <main>
         <Link to="/">
           <p>Home</p>
         </Link>

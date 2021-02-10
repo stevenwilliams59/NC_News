@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../api';
+import UpdateCommentVotes from './UpdateCommentVotes';
+import AddComment from './AddComment';
 
 export default class ArticleComments extends Component {
   state = {
@@ -17,18 +19,24 @@ export default class ArticleComments extends Component {
 
     if (!comments) return <p>No comments posted</p>;
     return (
-      <main className="comments">
-        {comments.map((comment) => {
-          return (
-            <section className="comments" key={comment.comment_id}>
-              <p>votes : {comment.votes}</p>
-              <p>{comment.author}</p>
-              <p>posted at {comment.created_at}</p>
-              <p>{comment.body}</p>
-            </section>
-          );
-        })}
-      </main>
+      <>
+        <AddComment id={this.props.article_id} comments={comments} />
+        <main className="comments">
+          {comments.map((comment) => {
+            return (
+              <section className="comments" key={comment.comment_id}>
+                <p>{comment.author}</p>
+                <UpdateCommentVotes
+                  votes={comment.votes}
+                  id={comment.comment_id}
+                />
+                <p>posted at {comment.created_at}</p>
+                <p>{comment.body}</p>
+              </section>
+            );
+          })}
+        </main>
+      </>
     );
   }
 }

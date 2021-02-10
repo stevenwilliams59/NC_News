@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  border: solid 4px red;
   height: 100vh;
   display: grid;
   grid-template: 1fr 50px 8fr / 1fr;
