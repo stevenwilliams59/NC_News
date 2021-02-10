@@ -19,9 +19,8 @@ export default class ArticleComments extends Component {
     return (
       <main className="comments">
         {comments.map((comment) => {
-          console.log(comment);
           return (
-            <section className="comments">
+            <section className="comments" key={comment.comment_id}>
               <p>votes : {comment.votes}</p>
               <p>{comment.author}</p>
               <p>posted at {comment.created_at}</p>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../api';
 import { Link } from '@reach/router';
 import ArticleComments from './ArticleComments';
+import UpdateVotes from './UpdateVotes';
 
 class EachArticle extends Component {
   state = {
@@ -24,6 +25,7 @@ class EachArticle extends Component {
         </Link>
         <p>{article.title}</p>
         <p>{article.body}</p>
+        <UpdateVotes votes={article.votes} id={article.article_id} />
         <ArticleComments article_id={this.props.article_id} />
       </main>
     );

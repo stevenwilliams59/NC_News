@@ -7,8 +7,8 @@ const article = ({ title, topic, votes, comment_count, body, article_id }) => {
       <section className="article">
         <h3>{title}</h3>
         <p>{topic}</p>
-        <p>{votes}</p>
-        <p>{comment_count}</p>
+        <p>Votes {votes}</p>
+        <p>Comments {comment_count}</p>
         {body.length > 100 ? <p>{body.slice(0, 100)}...</p> : <p>{body}...</p>}
       </section>
     </Link>

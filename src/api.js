@@ -37,3 +37,12 @@ export const getCommentsByArticleById = (id) => {
       return data;
     });
 };
+
+export const updateVotes = (id, voteDiff) => {
+  return axios.patch(
+    `https://northcoders--news--project.herokuapp.com/api/articles/${id}`,
+    {
+      inc_votes: voteDiff
+    }
+  );
+};
