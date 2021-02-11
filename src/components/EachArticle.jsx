@@ -21,13 +21,16 @@ class EachArticle extends Component {
     if (!article) return <p>fetching article!</p>;
     return (
       <main>
-        <Link to="/">
+        <Link to="/" className="homeNav">
           <p>Home</p>
         </Link>
         <p>{article.title}</p>
         <p>{article.body}</p>
         <UpdateVotes votes={article.votes} id={article.article_id} />
-        <ArticleComments article_id={this.props.article_id} />
+        <ArticleComments
+          article_id={this.props.article_id}
+          userName={this.props.userName}
+        />
       </main>
     );
   }

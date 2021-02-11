@@ -9,7 +9,7 @@ export default class UpdateVotes extends Component {
     const { votes } = this.props;
     const { voteChange } = this.state;
     return (
-      <div className="UpdateVotes">
+      <div className="updateVotes">
         <button
           disabled={voteChange === 1}
           onClick={() => {
@@ -18,6 +18,7 @@ export default class UpdateVotes extends Component {
         >
           up
         </button>
+        <p>Votes:</p>
         <p>{votes + voteChange}</p>
         <button
           disabled={voteChange === -1}

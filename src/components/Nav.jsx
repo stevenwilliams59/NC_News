@@ -13,13 +13,13 @@ export default class Nav extends Component {
   render() {
     const { topics } = this.state;
     return (
-      <nav className="nav">
-        <Link to={`/`} key={'all'}>
+      <nav>
+        <Link to={`/`} key={'all'} className="nav">
           {'All Topics'}
         </Link>
         {topics.map((topic) => {
           return (
-            <Link to={`/topic/${topic.slug}`} key={topic.slug}>
+            <Link to={`/topic/${topic.slug}`} key={topic.slug} className="nav">
               {topic.slug}
             </Link>
           );

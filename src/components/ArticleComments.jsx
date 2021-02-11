@@ -13,6 +13,11 @@ export default class ArticleComments extends Component {
       this.setState({ comments: comments.comments });
     });
   }
+  updateComments = (newComment) => {
+    this.setState((currentState) => ({
+      comments: [newComment, ...currentState.comments]
+    }));
+  };
 
   render() {
     const { comments } = this.state;
@@ -20,7 +25,11 @@ export default class ArticleComments extends Component {
     if (!comments) return <p>No comments posted</p>;
     return (
       <>
-        <AddComment id={this.props.article_id} comments={comments} />
+        <AddComment
+          id={this.props.article_id}
+          updateComments={this.updateComments}
+          userName={this.props.userName}
+        />
         <main className="comments">
           {comments.map((comment) => {
             return (

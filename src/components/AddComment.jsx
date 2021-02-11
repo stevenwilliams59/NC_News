@@ -3,12 +3,11 @@ import React, { Component } from 'react';
 
 export default class AddComment extends Component {
   state = {
-    author: 'grumpy19',
-    body: ''
+    author: this.props.userName,
+    body: '',
+    isLoading: false
   };
   render() {
-    console.log(this.props);
-
     return (
       <form onSubmit={this.handleSubmit} className="addCommentForm">
         <p>{this.state.author}</p>
@@ -27,16 +26,20 @@ export default class AddComment extends Component {
     );
   }
   handleChange = (e) => {
-    return { body: e.target.value };
+    this.setState(() => {
+      return {
+        body: e.target.value,
+        author: this.props.userName
+      };
+    });
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { id } = this.props;
+    const { id, userName } = this.props;
     const postData = { author: this.state.author, body: this.state.body };
-    api.addComment(id, postData).then((res) => {
-      this.setState((currentState) => {
-        return { comments: currentState.comments };
-      });
+    api.addComment(id, postData, userName).then((res) => {
+      this.props.updateComments(res.data.comment);
+      this.setState({ body: '' });
     });
   };
 }
