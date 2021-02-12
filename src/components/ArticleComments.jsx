@@ -44,13 +44,18 @@ export default class ArticleComments extends Component {
           {comments.map((comment) => {
             return (
               <section className="comments" key={comment.comment_id}>
-                <p>{comment.author}</p>
+                <p className="commentAuthor">{comment.author}</p>
+
+                <p className="commentDate">
+                  Posted on {new Date(comment.created_at).toDateString()}
+                </p>
+                <p className="commentBody">{comment.body}</p>
+
                 <UpdateCommentVotes
                   votes={comment.votes}
                   id={comment.comment_id}
                 />
-                <p>Posted on {new Date(comment.created_at).toDateString()}</p>
-                <p>{comment.body}</p>
+
                 {comment.author === this.props.userName && (
                   <button
                     className="deleteCommentButton"
