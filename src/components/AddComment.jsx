@@ -37,11 +37,13 @@ export default class AddComment extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { id, userName } = this.props;
+    console.log(userName);
 
     const postData = { username: userName, body: this.state.body };
     console.log(postData);
     api.addComment(id, postData).then((res) => {
       this.props.updateComments(res.data.comment);
+      console.log(res.data);
     });
     this.setState({ body: '' });
   };

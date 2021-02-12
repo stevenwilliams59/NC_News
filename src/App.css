@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: rgba(204, 199, 199, 0.034);
 }
 .App {
   text-align: center;
@@ -17,9 +18,7 @@ nav {
   display: flex;
   justify-content: space-around;
 }
-.article {
-  border: solid green;
-}
+
 .articleLink {
   background: olive;
   text-decoration: none;
@@ -35,16 +34,24 @@ nav {
   text-align: center;
 }
 .comments {
-  border: solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 1px 2px 10px rgb(5, 3, 29);
+  border-radius: 5px 20px 5px;
+  text-align: center;
+  color: black;
 }
 .nav {
   text-decoration: none;
   color: black;
-  border: blueviolet solid;
-  background: blueviolet;
+  background: red;
+  padding: 5px;
   box-shadow: 1px 2px 10px rgb(5, 3, 29);
   border-radius: 5px 20px 5px;
   text-align: center;
+  margin-bottom: 20px;
 }
 .homeNav {
   text-decoration: none;
@@ -60,17 +67,41 @@ nav {
 button {
   text-decoration: none;
   color: black;
-  border: blueviolet solid;
-  background: blueviolet;
+  border: red;
+  background: red;
   box-shadow: 1px 2px 10px rgb(5, 3, 29);
   border-radius: 50%;
   text-align: center;
 }
 .cooking {
-  background-image: url('images/2cd43b_1faf930b60b04065ab6198380a350ecd_mv2.png');
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
   color: black;
-  opacity: 0.4;
+  box-shadow: 1px 2px 10px rgb(5, 3, 29);
+  border-radius: 5px 20px 5px;
+  text-align: center;
+  color: black;
+}
+.football {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 1px 2px 10px rgb(5, 3, 29);
+  border-radius: 5px 20px 5px;
+  text-align: center;
+  color: black;
 }
 
-image {
+.coding {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 1px 2px 10px rgb(5, 3, 29);
+  border-radius: 5px 20px 5px;
+  text-align: center;
+  color: black;
+  color: black;
 }
