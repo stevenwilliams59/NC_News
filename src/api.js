@@ -62,3 +62,8 @@ export const addComment = (id, postData) => {
     postData
   );
 };
+export const deleteComment = (comment_id) => {
+  return axios.delete(
+    `https://northcoders--news--project.herokuapp.com/api/comments/${comment_id}`
+  );
+};

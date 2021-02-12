@@ -3,8 +3,8 @@ import { Link } from '@reach/router';
 
 const article = ({ title, topic, votes, comment_count, body, article_id }) => {
   return (
-    <Link to={`/articles/${article_id}`}>
-      <section className="article">
+    <Link to={`/articles/${article_id}`} className="articleLink">
+      <section className={topic}>
         <h3>{title}</h3>
         <p>{topic}</p>
         <p>Votes {votes}</p>

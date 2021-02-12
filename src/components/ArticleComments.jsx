@@ -18,10 +18,20 @@ export default class ArticleComments extends Component {
       comments: [newComment, ...currentState.comments]
     }));
   };
+  deleteYourComment = (comment_id) => {
+    this.setState((currentState) => {
+      const updatedComments = currentState.comments.filter((comment) => {
+        return comment_id !== comment.comment_id;
+      });
+      return {
+        comments: updatedComments
+      };
+    });
+    api.deleteComment(comment_id);
+  };
 
   render() {
     const { comments } = this.state;
-
     if (!comments) return <p>No comments posted</p>;
     return (
       <>
@@ -41,6 +51,14 @@ export default class ArticleComments extends Component {
                 />
                 <p>posted at {comment.created_at}</p>
                 <p>{comment.body}</p>
+                {comment.author === this.props.userName && (
+                  <button
+                    className="deleteCommentButton"
+                    onClick={() => this.deleteYourComment(comment.comment_id)}
+                  >
+                    DELETE YOUR COMMENT
+                  </button>
+                )}
               </section>
             );
           })}

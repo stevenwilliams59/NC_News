@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 export default class AddComment extends Component {
   state = {
-    author: this.props.userName,
+    author: '',
     body: '',
     isLoading: false
   };
@@ -17,6 +17,7 @@ export default class AddComment extends Component {
           type="text"
           onChange={this.handleChange}
           placeholder="Comment"
+          value={this.state.body}
         />
 
         <button className="commentButton" type="submit">
@@ -36,10 +37,12 @@ export default class AddComment extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { id, userName } = this.props;
-    const postData = { author: this.state.author, body: this.state.body };
-    api.addComment(id, postData, userName).then((res) => {
+
+    const postData = { username: userName, body: this.state.body };
+    console.log(postData);
+    api.addComment(id, postData).then((res) => {
       this.props.updateComments(res.data.comment);
-      this.setState({ body: '' });
     });
+    this.setState({ body: '' });
   };
 }
