@@ -15,7 +15,7 @@ export default class Nav extends Component {
     return (
       <nav>
         <Link to={`/`} key={'all'} className="nav">
-          {'All Topics'}
+          {'all topics'}
         </Link>
         {topics.map((topic) => {
           return (

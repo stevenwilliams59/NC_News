@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 
 export default class App extends Component {
   state = {
-    userName: 'Steve'
+    userName: 'jessjelly'
   };
   render() {
     return (

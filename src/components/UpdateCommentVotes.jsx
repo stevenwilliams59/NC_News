@@ -9,7 +9,7 @@ export default class UpdateCommentVotes extends Component {
     const { votes } = this.props;
     const { voteChange } = this.state;
     return (
-      <div className="UpdateVotes">
+      <div className="updateVotes">
         <button
           disabled={voteChange === 1}
           onClick={() => {

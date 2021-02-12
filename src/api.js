@@ -67,3 +67,8 @@ export const deleteComment = (comment_id) => {
     `https://northcoders--news--project.herokuapp.com/api/comments/${comment_id}`
   );
 };
+export const sortArticlesByQuery = (query) => {
+  return axios.get(
+    `https://northcoders--news--project.herokuapp.com/api/articles?${query}`
+  );
+};

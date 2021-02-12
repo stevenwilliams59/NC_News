@@ -11,7 +11,8 @@ export default class ArticleList extends Component {
   };
 
   componentDidMount() {
-    this.fetchArticles();
+    const { topic } = this.props;
+    this.fetchArticles(topic);
   }
 
   componentDidUpdate(prevProps) {

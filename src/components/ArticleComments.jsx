@@ -49,7 +49,7 @@ export default class ArticleComments extends Component {
                   votes={comment.votes}
                   id={comment.comment_id}
                 />
-                <p>posted at {comment.created_at}</p>
+                <p>Posted on {new Date(comment.created_at).toDateString()}</p>
                 <p>{comment.body}</p>
                 {comment.author === this.props.userName && (
                   <button
