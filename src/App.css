@@ -32,7 +32,7 @@ nav {
   padding: 5px;
   color: red;
   background: black;
-  text-align: center;
+  text-align: left;
 }
 .comments {
   margin-top: 30px;
@@ -157,4 +157,74 @@ button {
 }
 .body {
   margin-bottom: 20px;
+}
+.textArea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.commentButton {
+  align-self: center;
+}
+.up {
+  background-color: green;
+  margin-bottom: 5px;
+}
+.down {
+  background-color: red;
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 600px) {
+  .comments {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 1px 2px 10px rgb(5, 3, 29);
+    border-radius: 5px 20px 5px;
+    text-align: center;
+    color: black;
+  }
+  .updateVotes {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 50px;
+  }
+  .articleBody {
+    margin-bottom: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+  .articleTitle {
+    padding: 50px;
+  }
+  nav {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .up {
+    margin-bottom: 10px;
+  }
+  .down {
+    margin-bottom: 10px;
+  }
+  .football {
+    margin-left: 350px;
+    margin-right: 350px;
+  }
+  .coding {
+    margin-left: 350px;
+    margin-right: 350px;
+  }
+  .cooking {
+    margin-left: 350px;
+    margin-right: 350px;
+  }
 }

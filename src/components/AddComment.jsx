@@ -12,6 +12,7 @@ export default class AddComment extends Component {
       <form onSubmit={this.handleSubmit} className="addCommentForm">
         <p>{this.state.author}</p>
         <textarea
+          className="textArea"
           rows="5"
           cols="40"
           type="text"

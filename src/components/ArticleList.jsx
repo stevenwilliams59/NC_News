@@ -35,9 +35,9 @@ export default class ArticleList extends Component {
       </main>
     );
   }
-  fetchArticles(topic) {
+  fetchArticles(topic, sort_by) {
     api
-      .getArticles(topic)
+      .getArticles(topic, sort_by)
       .then((articles) => {
         this.setState({ articles, isLoading: false });
       })

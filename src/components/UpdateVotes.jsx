@@ -18,8 +18,8 @@ export default class UpdateVotes extends Component {
         >
           up
         </button>
-        <p>Votes:</p>
-        <p>{votes + voteChange}</p>
+
+        <p>Votes: {votes + voteChange}</p>
         <button
           disabled={voteChange === -1}
           onClick={() => {

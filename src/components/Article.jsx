@@ -13,8 +13,8 @@ const article = ({ title, topic, votes, comment_count, body, article_id }) => {
         ) : (
           <p className="body">{body}...</p>
         )}
-        <p className="votesAndComments">Votes {votes} </p>
-        <p className="votesAndComments">Comments {comment_count}</p>
+        <p className="votesAndComments">Likes: {votes} </p>
+        <p className="votesAndComments">&#128172; {comment_count}</p>
       </section>
     </Link>
   );

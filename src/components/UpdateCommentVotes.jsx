@@ -11,21 +11,24 @@ export default class UpdateCommentVotes extends Component {
     return (
       <div className="updateVotes">
         <button
+          className="up"
           disabled={voteChange === 1}
           onClick={() => {
             this.handleClick(1);
           }}
         >
-          up
+          &#128077;
         </button>
-        <p>{votes + voteChange}</p>
+
+        <p> {votes + voteChange}</p>
         <button
+          className="down"
           disabled={voteChange === -1}
           onClick={() => {
             this.handleClick(-1);
           }}
         >
-          down
+          &#128078;
         </button>
       </div>
     );
