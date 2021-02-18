@@ -1,12 +1,21 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-const article = ({ title, topic, votes, comment_count, body, article_id }) => {
+const article = ({
+  title,
+  topic,
+  votes,
+  comment_count,
+  body,
+  article_id,
+  created_at
+}) => {
   return (
     <Link to={`/articles/${article_id}`} className="articleLink">
       <section className={topic}>
         <p className="title">{title}</p>
         <p className="topic">{topic}</p>
+        <p>{new Date(created_at).toDateString()}</p>
 
         {body.length > 100 ? (
           <p className="body">{body.slice(0, 100)}...</p>

@@ -11,6 +11,7 @@ export default class Nav extends Component {
   }
 
   render() {
+    console.log(this.state);
     const { topics } = this.state;
     return (
       <nav>

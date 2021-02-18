@@ -175,6 +175,9 @@ button {
   background-color: red;
   margin-bottom: 5px;
 }
+.filter {
+  color: purple;
+}
 @media screen and (min-width: 600px) {
   .comments {
     margin-top: 40px;

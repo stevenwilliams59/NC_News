@@ -8,10 +8,10 @@ export const getTopics = () => {
     });
 };
 
-export const getArticles = (topic, sort_by) => {
+export const getArticles = (topic, sortBy) => {
   return axios
     .get('https://northcoders--news--project.herokuapp.com/api/articles', {
-      params: { topic: topic, sort_by: sort_by }
+      params: { topic: topic, sortBy: sortBy }
     })
     .then(({ data }) => {
       return data.articles;
