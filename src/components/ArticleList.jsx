@@ -8,7 +8,9 @@ const SORT_OPTIONS = {
   VOTES_ASC: 'VOTES_ASC',
   VOTES_DESC: 'VOTES_DESC',
   CREATED_AT_ASC: 'CREATED_AT_ASC',
-  CREATED_AT_DESC: 'CREATED_AT_DESC'
+  CREATED_AT_DESC: 'CREATED_AT_DESC',
+  COMMENT_COUNT_ASC: 'COMMENT_COUNT_ASC',
+  COMMENT_COUNT_DESC: 'COMMENT_COUNT_DESC'
 };
 
 export default class ArticleList extends Component {
@@ -49,6 +51,12 @@ export default class ArticleList extends Component {
           new Date(a.created_at).valueOf() - new Date(b.created_at).valueOf()
         );
       }
+      if (this.state.sortBy === SORT_OPTIONS.COMMENT_COUNT_DESC) {
+        return b.comment_count - a.comment_count;
+      }
+      if (this.state.sortBy === SORT_OPTIONS.COMMENT_COUNT_ASC) {
+        return a.comment_count - b.comment_count;
+      }
       return 1;
     });
   }
@@ -61,7 +69,7 @@ export default class ArticleList extends Component {
     const sorted = this.sortedArticles();
     return (
       <main className="list">
-        <label htmlFor="options">sort by:</label>
+        <label htmlFor="options">sort by: </label>
 
         <Select
           name="options"
